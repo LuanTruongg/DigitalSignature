@@ -13,6 +13,7 @@ namespace DigitalSignature.Data.Entities
 		public string LastName { get; set; }
 		public string CIC { get; set; }
 		public string DepartmentId { get; set; }
+		public string PositionId { get; set; }
 		public DateTime CreateAt { get; set; }
 		public string CreateBy { get; set; }
 		public DateTime UpdateAt { get; set; }

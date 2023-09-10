@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DigitalSignature.Data\DigitalSignature.Data.csproj" />
+    <ProjectReference Include="..\DigitalSignature.Ultilities\DigitalSignature.Ultilities.csproj" />
+    <ProjectReference Include="..\DigitalSignature.ViewModel\DigitalSignature.ViewModel.csproj" />
+  </ItemGroup>
+
+</Project>

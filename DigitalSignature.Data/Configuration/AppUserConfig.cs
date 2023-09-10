@@ -14,6 +14,8 @@ namespace DigitalSignature.Data.Configuration
 			builder.Property(x => x.FirstName).IsRequired().HasMaxLength(250);
 			builder.Property(x => x.LastName).IsRequired().HasMaxLength(250);
 			builder.Property(x => x.CIC).IsRequired().HasMaxLength(250);
+			builder.Property(x => x.PositionId).IsRequired();
+			builder.Property(x => x.DepartmentId).IsRequired();
 			builder.Property(x => x.CreateAt).IsRequired();
 			builder.Property(x => x.UpdateAt).IsRequired();
 			builder.Property(x => x.CreateBy).IsRequired().HasMaxLength(250);

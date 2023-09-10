@@ -1,6 +1,8 @@
 using DigitalSignature.Data.EF;
 using DigitalSignature.Data.Entities;
+using DigitalSignature.Service.UserManagement;
 using DigitalSignature.Ultilities.Constant;
+using DigitalSignature.Ultilities.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,8 +19,8 @@ builder.Services.AddDbContext<DigitalSignatureDbContext>(options =>
 	options.UseSqlServer(builder.Configuration.GetConnectionString("DigitalSignatureDb"));
 });
 builder.Services.AddIdentity<AppUser,IdentityRole>().AddEntityFrameworkStores<DigitalSignatureDbContext>().AddDefaultTokenProviders();
-
-
+builder.Services.AddScoped<IUserManagement, UserManagement>();
+builder.Services.AddScoped<IResponse, Response>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -11,6 +11,7 @@ namespace DigitalSignature.Data.Configuration
 			builder.ToTable("AppUsers");
 			builder.HasKey(x => x.Id);
 			builder.Property(x => x.Id).IsRequired().HasMaxLength(450).ValueGeneratedOnAdd();
+			builder.Property(x => x.EmployeeCode).IsRequired();
 			builder.Property(x => x.FirstName).IsRequired().HasMaxLength(250);
 			builder.Property(x => x.LastName).IsRequired().HasMaxLength(250);
 			builder.Property(x => x.CIC).IsRequired().HasMaxLength(250);
@@ -21,7 +22,8 @@ namespace DigitalSignature.Data.Configuration
 			builder.Property(x => x.CreateBy).IsRequired().HasMaxLength(250);
 			builder.Property(x => x.UpdateBy).IsRequired().HasMaxLength(250);
 
-			builder.HasOne(x => x.Department).WithOne(x => x.User);
+			builder.HasOne(x => x.Department).WithMany(x => x.User).HasForeignKey(x=>x.DepartmentId);
+
 		}
 	}
 }

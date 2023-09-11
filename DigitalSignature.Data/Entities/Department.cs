@@ -10,6 +10,6 @@ namespace DigitalSignature.Data.Entities
 	{
 		public string Id { get; set; }
 		public string Name { get; set; }
-		public AppUser User { get; set; }
+		public List<AppUser> User { get; set; }
 	}
 }

@@ -4,6 +4,7 @@ using DigitalSignature.Data.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DigitalSignature.Data.Migrations
 {
     [DbContext(typeof(DigitalSignatureDbContext))]
-    partial class DigitalSignatureDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230911070800_Add_field_EmployeeCode_for_User")]
+    partial class Add_field_EmployeeCode_for_User
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -121,7 +123,8 @@ namespace DigitalSignature.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DepartmentId");
+                    b.HasIndex("DepartmentId")
+                        .IsUnique();
 
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
@@ -400,8 +403,8 @@ namespace DigitalSignature.Data.Migrations
             modelBuilder.Entity("DigitalSignature.Data.Entities.AppUser", b =>
                 {
                     b.HasOne("DigitalSignature.Data.Entities.Department", "Department")
-                        .WithMany("User")
-                        .HasForeignKey("DepartmentId")
+                        .WithOne("User")
+                        .HasForeignKey("DigitalSignature.Data.Entities.AppUser", "DepartmentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -493,7 +496,8 @@ namespace DigitalSignature.Data.Migrations
 
             modelBuilder.Entity("DigitalSignature.Data.Entities.Department", b =>
                 {
-                    b.Navigation("User");
+                    b.Navigation("User")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("DigitalSignature.Data.Entities.Document", b =>

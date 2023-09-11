@@ -7,13 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalSignature.WebApp", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalSignature.BackendApi", "DigitalSignature.BackendApi\DigitalSignature.BackendApi.csproj", "{EEBC1736-933F-4624-8FA4-F43DD82F7FFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalSignature.ViewModel", "DigitalSignature.ViewModel\DigitalSignature.ViewModel.csproj", "{EBDF9D69-46C1-41DF-A178-FFBB3E6A8659}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalSignature.Data", "DigitalSignature.Data\DigitalSignature.Data.csproj", "{437A5743-A860-4033-A69A-21A004501D49}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalSignature.Ultilities", "DigitalSignature.Ultilities\DigitalSignature.Ultilities.csproj", "{ECEDE6F2-80A3-428C-ADBD-16D18EDD9DD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalSignature.Service", "DigitalSignature.Service\DigitalSignature.Service.csproj", "{C00F5D18-D820-466F-B786-9A9F44F2A187}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalSignature.Service", "DigitalSignature.Service\DigitalSignature.Service.csproj", "{C00F5D18-D820-466F-B786-9A9F44F2A187}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalSignature.DTO", "DigitalSignature.DTO\DigitalSignature.DTO.csproj", "{B379E7A9-A70E-43D5-9C41-C84C86DA75FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,6 @@ Global
 		{EEBC1736-933F-4624-8FA4-F43DD82F7FFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEBC1736-933F-4624-8FA4-F43DD82F7FFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEBC1736-933F-4624-8FA4-F43DD82F7FFA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EBDF9D69-46C1-41DF-A178-FFBB3E6A8659}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EBDF9D69-46C1-41DF-A178-FFBB3E6A8659}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EBDF9D69-46C1-41DF-A178-FFBB3E6A8659}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EBDF9D69-46C1-41DF-A178-FFBB3E6A8659}.Release|Any CPU.Build.0 = Release|Any CPU
 		{437A5743-A860-4033-A69A-21A004501D49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{437A5743-A860-4033-A69A-21A004501D49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{437A5743-A860-4033-A69A-21A004501D49}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{C00F5D18-D820-466F-B786-9A9F44F2A187}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C00F5D18-D820-466F-B786-9A9F44F2A187}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C00F5D18-D820-466F-B786-9A9F44F2A187}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B379E7A9-A70E-43D5-9C41-C84C86DA75FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B379E7A9-A70E-43D5-9C41-C84C86DA75FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B379E7A9-A70E-43D5-9C41-C84C86DA75FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B379E7A9-A70E-43D5-9C41-C84C86DA75FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

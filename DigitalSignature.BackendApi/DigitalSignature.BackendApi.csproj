@@ -17,14 +17,13 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
-    <PackageReference Include="xunit.extensibility.core" Version="2.5.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DigitalSignature.Data\DigitalSignature.Data.csproj" />
+    <ProjectReference Include="..\DigitalSignature.DTO\DigitalSignature.DTO.csproj" />
     <ProjectReference Include="..\DigitalSignature.Service\DigitalSignature.Service.csproj" />
     <ProjectReference Include="..\DigitalSignature.Ultilities\DigitalSignature.Ultilities.csproj" />
-    <ProjectReference Include="..\DigitalSignature.ViewModel\DigitalSignature.ViewModel.csproj" />
   </ItemGroup>
 
 </Project>

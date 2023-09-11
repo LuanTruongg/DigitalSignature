@@ -9,6 +9,7 @@ namespace DigitalSignature.Data.Entities
 {
 	public class AppUser : IdentityUser
 	{
+		public string EmployeeCode { get; set; }
 		public string FirstName { get; set; }
 		public string LastName { get; set; }
 		public string CIC { get; set; }

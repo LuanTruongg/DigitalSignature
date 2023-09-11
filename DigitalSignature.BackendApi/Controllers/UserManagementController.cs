@@ -1,5 +1,5 @@
 ﻿using DigitalSignature.Service.UserManagement;
-using DigitalSignature.ViewModel.UserManagement;
+using DigitalSignature.DTO.UserManagement;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DigitalSignature.BackendApi.Controllers
@@ -25,6 +25,18 @@ namespace DigitalSignature.BackendApi.Controllers
 					return Ok(result.UserId);
 			}
 
+			return BadRequest();
+		}
+		[HttpGet]
+		[ProducesResponseType(typeof(GetUserManagementListResponse), 200)]
+		public async Task<IActionResult> GetListUserAsync([FromQuery] GetUserManagementListRequest request)
+		{
+			if (ModelState.IsValid)
+			{
+				var result = await _service.GetListUserManagementAsync(request);
+				if (result != null)
+					return Ok(result);
+			}
 			return BadRequest();
 		}
 	}

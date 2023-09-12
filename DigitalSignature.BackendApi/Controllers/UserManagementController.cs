@@ -39,5 +39,17 @@ namespace DigitalSignature.BackendApi.Controllers
 			}
 			return BadRequest();
 		}
+		[HttpGet("{userId}")]
+		[ProducesResponseType(typeof(GetUserManagementListResponse), 200)]
+		public async Task<IActionResult> GetUserByIdAsync(string userId)
+		{
+			if (ModelState.IsValid)
+			{
+				var result = await _service.GetUserManagementAsync(userId);
+				if (result != null)
+					return Ok(result);
+			}
+			return BadRequest();
+		}
 	}
 }

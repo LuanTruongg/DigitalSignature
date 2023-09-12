@@ -6,5 +6,6 @@ namespace DigitalSignature.Service.UserManagement
 	{
 		Task<CreateUserManagementResponse> CreateUserManagementAsync(CreateUserManagementRequest request);
 		Task<GetUserManagementListResponse> GetListUserManagementAsync(GetUserManagementListRequest request);
+		Task<UserManagementItem> GetUserManagementAsync(string userId);
 	}
 }

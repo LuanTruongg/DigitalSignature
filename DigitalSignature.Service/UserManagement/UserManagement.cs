@@ -4,8 +4,6 @@ using DigitalSignature.DTO.UserManagement;
 using DigitalSignature.Ultilities.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Cryptography.X509Certificates;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace DigitalSignature.Service.UserManagement
 {
@@ -62,8 +60,8 @@ namespace DigitalSignature.Service.UserManagement
 				listUser = listUser.Where(x => x.EmployeeCode.Contains(request.Search));
 			}
 
-			var numberPage = request.Page <= 0 ? 1 : request.Page;
-			var numberPageSize = request.PageSize <= 0 ? 10 : request.PageSize;
+			var numberPage = request.Page <= 0 || request.Page == -1 ? 1 : request.Page;
+			var numberPageSize = request.PageSize <= 0 || request.PageSize == -1 ? 10 : request.PageSize;
 
 			var data = await listUser.Skip((numberPage - 1) * numberPageSize)
 				.Take(request.PageSize)
@@ -87,6 +85,27 @@ namespace DigitalSignature.Service.UserManagement
 				Page = numberPage,
 				PageSize = numberPageSize,
 				Count = listUser.Count()
+			};
+		}
+
+		public async Task<UserManagementItem> GetUserManagementAsync(string userId)
+		{
+			var userExisting = await _userManager.FindByIdAsync(userId);
+            if (userExisting is null)
+            {
+				throw new ErrorException(404, "Not Found");
+			}
+			return new UserManagementItem()
+			{
+				UserId = userExisting.Id,
+				Name = userExisting.FirstName + " " + userExisting.LastName,
+				FirstName = userExisting.FirstName,
+				LastName = userExisting.LastName,
+				CIC = userExisting.CIC,
+				EmployeeCode = userExisting.EmployeeCode,
+				Email = userExisting.Email,
+				DepartmentId = userExisting.DepartmentId,
+				PositionId = userExisting.PositionId
 			};
 		}
 	}
